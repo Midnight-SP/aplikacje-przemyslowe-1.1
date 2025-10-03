@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.techcorp.service.EmployeeServiceTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-10-03T09:16:50.315Z" hostname="penguin" time="0.08">
+  <properties/>
+  <testcase name="findByCompany zwraca pracowników danej firmy (case-insensitive)" classname="com.techcorp.service.EmployeeServiceTest" time="0.003"/>
+  <testcase name="Sortowanie po nazwisku i pełnym imieniu" classname="com.techcorp.service.EmployeeServiceTest" time="0.005"/>
+  <testcase name="Zliczanie po stanowisku" classname="com.techcorp.service.EmployeeServiceTest" time="0.005"/>
+  <testcase name="Sortowanie przy takich samych nazwiskach używa pełnego imienia" classname="com.techcorp.service.EmployeeServiceTest" time="0.013"/>
+  <testcase name="Dodanie null powinno rzucić NullPointerException" classname="com.techcorp.service.EmployeeServiceTest" time="0.004"/>
+  <testcase name="Najwyżej zarabiający" classname="com.techcorp.service.EmployeeServiceTest" time="0.007"/>
+  <testcase name="Średnia pensja" classname="com.techcorp.service.EmployeeServiceTest" time="0.008"/>
+  <testcase name="Grupowanie po stanowisku z wieloma na tym samym stanowisku" classname="com.techcorp.service.EmployeeServiceTest" time="0.002"/>
+  <testcase name="Dodanie duplikatu email powinno rzucić DuplicateEmailException" classname="com.techcorp.service.EmployeeServiceTest" time="0.003"/>
+  <testcase name="Grupowanie po stanowisku" classname="com.techcorp.service.EmployeeServiceTest" time="0.0"/>
+  <testcase name="Najwyżej zarabiający dla pustego serwisu jest pusty" classname="com.techcorp.service.EmployeeServiceTest" time="0.0"/>
+  <testcase name="findByCompany dla braku wyników zwraca pustą listę" classname="com.techcorp.service.EmployeeServiceTest" time="0.001"/>
+  <testcase name="Średnia pensja dla pustego serwisu jest pusta" classname="com.techcorp.service.EmployeeServiceTest" time="0.001"/>
+  <testcase name="Zliczanie po stanowisku po dodaniu nowych" classname="com.techcorp.service.EmployeeServiceTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

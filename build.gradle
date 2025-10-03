@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.techcorp'
+version = '1.0.0-SNAPSHOT'
+description = 'Prosty system zarządzania pracownikami dla TechCorp'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Użycie BOM dla pełnego zestawu modułów JUnit 5 (ułatwia importy w IDE)
+    testImplementation platform('org.junit:junit-bom:5.10.2')
+    // Agregat (API + Engine + Params itd.)
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
