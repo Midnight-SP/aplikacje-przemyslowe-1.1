@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.techcorp.model.EmployeeTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-10-03T09:16:50.217Z" hostname="penguin" time="0.068">
+<testsuite name="com.techcorp.model.EmployeeTest" tests="20" skipped="0" failures="0" errors="0" timestamp="2025-10-04T14:31:39.100Z" hostname="penguin" time="0.064">
   <properties/>
-  <testcase name="setCompanyName odrzuca null" classname="com.techcorp.model.EmployeeTest" time="0.024"/>
+  <testcase name="setCompanyName odrzuca null" classname="com.techcorp.model.EmployeeTest" time="0.017"/>
   <testcase name="Równość po emailu ignorując wielkość liter" classname="com.techcorp.model.EmployeeTest" time="0.003"/>
   <testcase name="Setter wynagrodzenia aktualizuje wartość" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="getLastName zwraca pusty string dla pustego fullName" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="equals zwraca false dla null" classname="com.techcorp.model.EmployeeTest" time="0.002"/>
   <testcase name="Pracownicy z różnymi emailami nie są sobie równi" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
-  <testcase name="setFullName odrzuca null" classname="com.techcorp.model.EmployeeTest" time="0.003"/>
-  <testcase name="Powinien rzucić IllegalArgumentException przy ujemnym wynagrodzeniu" classname="com.techcorp.model.EmployeeTest" time="0.002"/>
-  <testcase name="Powinien utworzyć pracownika z poprawnymi danymi" classname="com.techcorp.model.EmployeeTest" time="0.005"/>
-  <testcase name="Setter wynagrodzenia waliduje wartość" classname="com.techcorp.model.EmployeeTest" time="0.002"/>
-  <testcase name="getLastName ignoruje wiele spacji" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="Konstruktor odrzuca null w position" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="Konstruktor odrzuca null w companyName" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="setFullName odrzuca null" classname="com.techcorp.model.EmployeeTest" time="0.004"/>
+  <testcase name="Konstruktor odrzuca null w fullName" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="getLastName zwraca pusty string dla białych znaków w fullName" classname="com.techcorp.model.EmployeeTest" time="0.002"/>
+  <testcase name="Powinien rzucić IllegalArgumentException przy ujemnym wynagrodzeniu" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="equals zwraca false dla innego typu" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="Powinien utworzyć pracownika z poprawnymi danymi" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="Setter wynagrodzenia waliduje wartość" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
+  <testcase name="getLastName ignoruje wiele spacji" classname="com.techcorp.model.EmployeeTest" time="0.003"/>
+  <testcase name="Konstruktor odrzuca null w email" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
   <testcase name="Metoda getLastName zwraca ostatni człon nazwiska" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
-  <testcase name="setPosition odrzuca null" classname="com.techcorp.model.EmployeeTest" time="0.002"/>
+  <testcase name="setPosition odrzuca null" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
   <testcase name="getLastName dla jednego członu zwraca ten sam tekst" classname="com.techcorp.model.EmployeeTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

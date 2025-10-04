@@ -58,10 +58,15 @@ class EmployeeServiceTest {
     }
 
     @Test
+    @DisplayName("findByCompany(null) rzuca NullPointerException")
+    void findByCompanyNull() {
+        assertThrows(NullPointerException.class, () -> service.findByCompany(null));
+    }
+
+    @Test
     @DisplayName("Sortowanie po nazwisku i pełnym imieniu")
     void sorting() {
         List<Employee> sorted = service.getEmployeesSortedByLastName();
-        // oczekujemy porządku: Jan Kowalski, Anna Nowak, Karol Prezes, Piotr Ziel (alfabetycznie po nazwisku)
         assertEquals("Jan Kowalski", sorted.get(0).getFullName());
         assertEquals("Anna Nowak", sorted.get(1).getFullName());
         assertEquals("Karol Prezes", sorted.get(2).getFullName());
@@ -74,7 +79,6 @@ class EmployeeServiceTest {
         service.addEmployee(new Employee("Adam Nowak", "adam.nowak@corp.com", "TechCorp", Position.STAZYSTA, 4000));
         service.addEmployee(new Employee("Zuzanna Nowak", "z.nowak@corp.com", "TechCorp", Position.STAZYSTA, 4000));
         List<Employee> sorted = service.getEmployeesSortedByLastName();
-        // Wyciągnij tylko Nowaków i sprawdź kolejność po pełnym imieniu (Adam, Anna, Zuzanna)
         List<String> nowaks = sorted.stream().filter(e -> e.getLastName().equals("Nowak")).map(Employee::getFullName).toList();
         assertEquals(List.of("Adam Nowak", "Anna Nowak", "Zuzanna Nowak"), nowaks);
     }
@@ -147,6 +151,14 @@ class EmployeeServiceTest {
         assertTrue(empty.getTopEarner().isEmpty());
     }
 
+    @Test
+    @DisplayName("size() zwraca liczbę pracowników")
+    void sizeReflectsNumberOfEmployees() {
+        assertEquals(4, service.size());
+        service.addEmployee(new Employee("Nowy", "new@corp.com", "TechCorp", Position.STAZYSTA, 1000));
+        assertEquals(5, service.size());
+    }
+
     @Nested
     class DefensiveCopies {
         @Test
@@ -157,5 +169,14 @@ class EmployeeServiceTest {
             list.clear();
             assertEquals(size, service.size());
         }
+    }
+
+    @Test
+    @DisplayName("DuplicateEmailException zawiera email w treści komunikatu")
+    void duplicateEmailMessageContainsEmail() {
+        DuplicateEmailException ex = assertThrows(DuplicateEmailException.class, () ->
+                service.addEmployee(new Employee("X", "JAN@corp.com", "TechCorp", Position.STAZYSTA, 1000))
+        );
+        assertTrue(ex.getMessage().contains("JAN@corp.com"));
     }
 }

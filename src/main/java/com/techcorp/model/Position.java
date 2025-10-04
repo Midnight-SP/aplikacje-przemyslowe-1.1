@@ -1,9 +1,6 @@
 package com.techcorp.model;
 
-/**
- * Stanowiska służbowe w organizacji wraz z bazową pensją i poziomem w hierarchii.
- * Niższa wartość level oznacza wyższe miejsce w hierarchii.
- */
+// Reprezentuje stanowiska w firmie wraz z bazowymi wynagrodzeniami i poziomami hierarchii.
 public enum Position {
     PREZES(25_000, 1),
     WICEPREZES(18_000, 2),

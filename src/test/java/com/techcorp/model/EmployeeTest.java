@@ -111,4 +111,58 @@ class EmployeeTest {
             assertTrue(s.contains("salary=8000"));
         }
     }
+
+    
+
+    @Test
+    @DisplayName("Konstruktor odrzuca null w fullName")
+    void constructorRejectsNullFullName() {
+        assertThrows(NullPointerException.class, () -> new Employee(null, "x@x", "TechCorp", Position.STAZYSTA, 1000));
+    }
+
+    @Test
+    @DisplayName("Konstruktor odrzuca null w email")
+    void constructorRejectsNullEmail() {
+        assertThrows(NullPointerException.class, () -> new Employee("Jan", null, "TechCorp", Position.STAZYSTA, 1000));
+    }
+
+    @Test
+    @DisplayName("Konstruktor odrzuca null w companyName")
+    void constructorRejectsNullCompanyName() {
+        assertThrows(NullPointerException.class, () -> new Employee("Jan", "x@x", null, Position.STAZYSTA, 1000));
+    }
+
+    @Test
+    @DisplayName("Konstruktor odrzuca null w position")
+    void constructorRejectsNullPosition() {
+        assertThrows(NullPointerException.class, () -> new Employee("Jan", "x@x", "TechCorp", null, 1000));
+    }
+
+    @Test
+    @DisplayName("getLastName zwraca pusty string dla pustego fullName")
+    void lastNameEmptyFullName() {
+        Employee e = new Employee("", "empty@corp.com", "TechCorp", Position.STAZYSTA, 0);
+        assertEquals("", e.getLastName());
+    }
+
+    @Test
+    @DisplayName("getLastName zwraca pusty string dla białych znaków w fullName")
+    void lastNameWhitespaceOnlyFullName() {
+        Employee e = new Employee("   \t  ", "ws@corp.com", "TechCorp", Position.STAZYSTA, 0);
+        assertEquals("", e.getLastName());
+    }
+
+    @Test
+    @DisplayName("equals zwraca false dla null")
+    void equalsWithNull() {
+        Employee e = new Employee("Jan", "eq@corp.com", "TechCorp", Position.STAZYSTA, 1000);
+        assertNotEquals(e, null);
+    }
+
+    @Test
+    @DisplayName("equals zwraca false dla innego typu")
+    void equalsWithDifferentType() {
+        Employee e = new Employee("Jan", "eq2@corp.com", "TechCorp", Position.STAZYSTA, 1000);
+        assertNotEquals(e, "not an employee");
+    }
 }

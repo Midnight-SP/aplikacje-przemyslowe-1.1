@@ -17,9 +17,7 @@ repositories {
 }
 
 dependencies {
-    // Użycie BOM dla pełnego zestawu modułów JUnit 5 (ułatwia importy w IDE)
     testImplementation platform('org.junit:junit-bom:5.10.2')
-    // Agregat (API + Engine + Params itd.)
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }
 
